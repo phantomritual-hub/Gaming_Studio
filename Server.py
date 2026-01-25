@@ -1,50 +1,26 @@
 from flask import Flask, request, jsonify
 
-# Create the Flask app
 app = Flask(__name__)
 
-# This will store scores temporarily
+# Temporary in-memory leaderboard
 leaderboard = []
 
-# -------------------------------
-# HOME ROUTE
-# -------------------------------
+# Root route (for testing)
 @app.route("/")
 def home():
     return "Server is running!"
 
-# -------------------------------
-# SUBMIT SCORE ROUTE
-# -------------------------------
+# Submit score
 @app.route("/submit", methods=["POST"])
-def submit_score():
-    data = request.get_json()
+def submit():
+    data = request.json
+    leaderboard.append(data)
+    return jsonify({"status": "ok"})
 
-    name = data.get("name")
-    time = data.get("time")
-
-    if name is None or time is None:
-        return jsonify({"error": "Invalid data"}), 400
-
-    leaderboard.append({
-        "name": name,
-        "time": time
-    })
-
-    # Sort leaderboard by time (ascending)
-    leaderboard.sort(key=lambda x: x["time"])
-
-    return jsonify({"status": "score added"})
-
-# -------------------------------
-# GET LEADERBOARD ROUTE
-# -------------------------------
+# Get leaderboard
 @app.route("/leaderboard")
 def get_leaderboard():
-    return jsonify(leaderboard[:10])
+    return jsonify(leaderboard)
 
-# -------------------------------
-# RUN SERVER
-# -------------------------------
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=10000)
