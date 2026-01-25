@@ -8,7 +8,7 @@ leaderboard = []
 # Root route (for testing)
 @app.route("/")
 def home():
-    return "Server is running!"
+    return "congrats yessssssssssssssssssssssssssssssssss"
 
 # Submit score
 @app.route("/submit", methods=["POST"])
