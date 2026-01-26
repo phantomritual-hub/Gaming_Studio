@@ -22,5 +22,14 @@ def submit():
 def get_leaderboard():
     return jsonify(leaderboard)
 
+@app.route("/delete")
+def delete():
+    data = request.json
+    exists = "can't find"
+    if data in leaderboard:
+        exists="removed " + str(data)
+        leaderboard.remove(data)
+    return exists
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
