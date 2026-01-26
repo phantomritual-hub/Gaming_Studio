@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Temporary in-memory leaderboard
-leaderboard = []
+leaderboard = ['hi']
 
 # Root route (for testing)
 @app.route("/")
