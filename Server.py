@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # Temporary in-memory leaderboard
-leaderboard = ['hi']
+leaderboard = {}
 
 # Root route (for testing)
 @app.route("/")
@@ -28,7 +28,7 @@ def delete():
     exists = "can't find"
     if data in leaderboard:
         exists="removed " + str(data)
-        leaderboard.remove(data)
+        leaderboard[data]= None
     return exists
 
 if __name__ == "__main__":
