@@ -14,7 +14,7 @@ def home():
 @app.route("/submit", methods=["POST"])
 def submit():
     data = request.json
-    leaderboard.append(data)
+    leaderboard[data[0]]=data[1]
     return jsonify({"status": "ok"})
 
 # Get leaderboard
