@@ -22,7 +22,7 @@ def submit():
 def get_leaderboard():
     return jsonify(leaderboard)
 
-@app.route("/delete")
+@app.route("/delete", methods=["POST"])
 def delete():
     data = request.json
     exists = "can't find"
