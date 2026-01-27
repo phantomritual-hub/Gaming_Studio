@@ -31,5 +31,11 @@ def delete():
         leaderboard.pop(data)
     return exists
 
+@app.route("/show",methods=["POST"])
+def show():
+    data=request.json
+    print(data)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
