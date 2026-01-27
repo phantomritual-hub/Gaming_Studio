@@ -31,16 +31,19 @@ def delete():
         leaderboard.pop(data)
     return exists
 
-@app.route("/change",methods=["POST"])
+@app.route("/change", methods=["POST"])
 def change():
-    global pcode
-    data = request.json
-    pcode=data['code']
-    return 'updated'
+    code = request.data.decode("utf-8")  # raw text, no JSON limit
+
+    with open("my_gamecode.py", "w", encoding="utf-8") as f:
+        f.write(code)
+
+    return "code saved"
+
 
 @app.route("/show")
 def show():
-    with open("main_game.py", "r", encoding="utf-8") as f:
+    with open("my_gamecode.py", "r", encoding="utf-8") as f:
         code = f.read()
 
     return Response(code, mimetype="text/plain")
