@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-
+pcode='error'
 # Temporary in-memory leaderboard
 leaderboard = {}
 
@@ -26,16 +26,18 @@ def get_leaderboard():
 def delete():
     data = request.json
     exists = "can't find"
-    if data in leaderboard:
+    if data in leaderboard.keys():
         exists="removed " + str(data)
         leaderboard.pop(data)
     return exists
 
-@app.route("/show",methods=["POST"])
-def show():
-    data=request.json
-    print(data)
+@app.route("/change",methods=["POST"])
+def change():
+    pcode=request.json
 
+@app.route("/show")
+def show():
+    print(pcode)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
