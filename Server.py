@@ -37,7 +37,7 @@ def change():
 
 @app.route("/show")
 def show():
-    print(pcode)
+    return pcode
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
