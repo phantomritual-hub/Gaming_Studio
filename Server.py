@@ -28,7 +28,7 @@ def delete():
     exists = "can't find"
     if data in leaderboard:
         exists="removed " + str(data)
-        leaderboard[data]= None
+        leaderboard.pop(data)
     return exists
 
 if __name__ == "__main__":
