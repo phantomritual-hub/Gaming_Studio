@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 
 app = Flask(__name__)
 pcode='error'
@@ -40,7 +40,10 @@ def change():
 
 @app.route("/show")
 def show():
-    return f"<pre>{pcode}</pre>"
+    with open("main_game.py", "r", encoding="utf-8") as f:
+        code = f.read()
+
+    return Response(code, mimetype="text/plain")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
