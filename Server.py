@@ -33,7 +33,9 @@ def delete():
 
 @app.route("/change",methods=["POST"])
 def change():
+    global pcode
     pcode=request.json
+    return 'updated'
 
 @app.route("/show")
 def show():
