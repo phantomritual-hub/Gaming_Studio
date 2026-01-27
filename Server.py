@@ -34,12 +34,13 @@ def delete():
 @app.route("/change",methods=["POST"])
 def change():
     global pcode
-    pcode=request.json
+    data = request.json
+    pcode=data['code']
     return 'updated'
 
 @app.route("/show")
 def show():
-    return pcode
+    return f"<pre>{pcode}</pre>"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
