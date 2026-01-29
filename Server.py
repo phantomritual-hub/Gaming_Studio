@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify, Response
 import requests
+import os
+
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+
 app = Flask(__name__)
 pcode='error'
-SUPABASE_URL = https://brgiiuclbiltlasnebyg.supabase.co
-SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJyZ2lpdWNsYmlsdGxhc25lYnlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk2ODk3ODMsImV4cCI6MjA4NTI2NTc4M30.k0rB6Z-Nki0vV5SBnNyFW5NYnaUpHlfDhvPpOmXSRNk
 # Temporary in-memory leaderboard
 leaderboard = {}
 
