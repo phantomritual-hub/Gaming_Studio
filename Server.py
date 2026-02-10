@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify, Response
+import requests
+import os
 
 app = Flask(__name__)
 pcode='error'
