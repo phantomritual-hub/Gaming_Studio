@@ -61,6 +61,11 @@ def show(name):
             code = f.read()
         chech=False
         return Response(code, mimetype="text/plain")
+    if name == 'Get_Code--test_Code':
+        with open("goal code.py", "r", encoding="utf-8") as f:
+            code = f.read()
+        chech=False
+        return Response(code, mimetype="text/plain")
     if name == 'Get_Code--SERVER_Code':
         check=False
         with open("my_servercode.py", "w", encoding="utf-8") as f:
