@@ -41,8 +41,9 @@ def change():
     return "code saved"
 
 
-@app.route("/show")
-def show():
+@app.route("/show<name>")
+def show(name):
+    print(name)
     with open("my_gamecode.py", "r", encoding="utf-8") as f:
         code = f.read()
 
