@@ -67,7 +67,7 @@ def show(name):
             code = f.write(x)
         with open("my_servercode.py", "r", encoding="utf-8") as f:
             code = f.read()
-        return code
+        return Response(code, mimetype="text/plain")
     if check:
         massage='hello'+name
         return massage
