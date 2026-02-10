@@ -53,15 +53,21 @@ def change():
 
     return "code saved"
 
-
+'''
 @app.route("/<name>")
 def show(name):
-    if name == 'Get Code--GAME_Code':
+    check=False
+    if name == 'Get_Code--GAME_Code':
         with open("my_gamecode.py", "r", encoding="utf-8") as f:
             code = f.read()
+        chech=True
         return Response(code, mimetype="text/plain")
-    if name == 'Get Code--SERVER_Code':
+    if name == 'Get_Code--SERVER_Code':
+        check=True
         return x
+    if check:
+        massage='hello'+name
+        return massage
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
