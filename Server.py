@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Response
+x='''from flask import Flask, request, jsonify, Response
 import requests
 import os
 
@@ -17,12 +17,6 @@ HEADERS = {
 pcode='error'
 # Temporary in-memory leaderboard
 leaderboard = {}
-
-# Extra work(no need to pay attention to) (hobby)
-@app.route("/<name>")
-def greet(name):
-    return name
-
 
 # Root route (for testing)
 @app.route("/")
@@ -60,12 +54,16 @@ def change():
     return "code saved"
 
 
-@app.route("/show")
-def show():
-    with open("my_gamecode.py", "r", encoding="utf-8") as f:
-        code = f.read()
-
-    return Response(code, mimetype="text/plain")
+@app.route("/<name>")
+def show(name):
+    if name == 'Get Code--GAME_Code':
+        with open("my_gamecode.py", "r", encoding="utf-8") as f:
+            code = f.read()
+        return Response(code, mimetype="text/plain")
+    if name == 'Get Code--SERVER_Code':
+        return x
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+'''
+exec(x)
