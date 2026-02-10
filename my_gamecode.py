@@ -1,4 +1,4 @@
-import requests as req
+'''import requests as req
 import random as r
 import pygame as py
 py.init()
@@ -149,3 +149,4 @@ def show():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+'''
