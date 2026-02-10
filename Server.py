@@ -21,7 +21,7 @@ leaderboard = {}
 def show():
     with open("my_gamecode.py", "r", encoding="utf-8") as f:
         code = f.read()
-
+    print(code)
     return Response(code, mimetype="text/plain")
 
 # Root route (for testing)
