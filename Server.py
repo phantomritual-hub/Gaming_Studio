@@ -53,7 +53,6 @@ def change():
 
     return "code saved"
 
-'''
 @app.route("/<name>")
 def show(name):
     check=False
