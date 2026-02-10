@@ -55,18 +55,24 @@ def change():
 
 @app.route("/<name>")
 def show(name):
-    check=False
+    check=True
     if name == 'Get_Code--GAME_Code':
         with open("my_gamecode.py", "r", encoding="utf-8") as f:
             code = f.read()
-        chech=True
+        chech=False
         return Response(code, mimetype="text/plain")
     if name == 'Get_Code--SERVER_Code':
-        check=True
-        return x
+        check=False
+        with open("my_servercode.py", "w", encoding="utf-8") as f:
+            code = f.write(x)
+        with open("my_servercode.py", "r", encoding="utf-8") as f:
+            code = f.read()
+        return code
     if check:
         massage='hello'+name
         return massage
+    else:
+        check=True
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
