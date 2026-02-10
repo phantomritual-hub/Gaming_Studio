@@ -5,6 +5,12 @@ pcode='error'
 # Temporary in-memory leaderboard
 leaderboard = {}
 
+# Extra work(no need to pay attention to) (hobby)
+@app.route("/<name>")
+def greet(name):
+    print('hi ',name)
+
+
 # Root route (for testing)
 @app.route("/")
 def home():
@@ -41,9 +47,8 @@ def change():
     return "code saved"
 
 
-@app.route("/show<name>")
-def show(name):
-    print(name)
+@app.route("/show")
+def show():
     with open("my_gamecode.py", "r", encoding="utf-8") as f:
         code = f.read()
 
