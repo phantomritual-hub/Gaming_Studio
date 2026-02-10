@@ -21,7 +21,7 @@ leaderboard = {}
 # Extra work(no need to pay attention to) (hobby)
 @app.route("/<name>")
 def greet(name):
-    return "hi "+name
+    return name
 
 
 # Root route (for testing)
