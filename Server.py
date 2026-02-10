@@ -3,6 +3,17 @@ import requests
 import os
 
 app = Flask(__name__)
+
+# Load Supabase keys from environment variables (safer than hardcoding)
+SUPABASE_URL = os.environ.get("SUPABASE_URL")  # Example: https://xyzcompany.supabase.co
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")  # Your anon key
+
+HEADERS = {
+    "apikey": SUPABASE_KEY,
+    "Authorization": f"Bearer {SUPABASE_KEY}",
+    "Content-Type": "application/json"
+}
+
 pcode='error'
 # Temporary in-memory leaderboard
 leaderboard = {}
@@ -10,7 +21,7 @@ leaderboard = {}
 # Extra work(no need to pay attention to) (hobby)
 @app.route("/<name>")
 def greet(name):
-    print('hi ',name)
+    return "hi "+name
 
 
 # Root route (for testing)
