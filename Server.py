@@ -61,7 +61,7 @@ def show(name):
             code = f.read()
         chech=False
         return Response(code, mimetype="text/plain")
-    if name == 'Get_Code--test_Code':
+    if name == 'Get_Code--TEST_Code':
         with open("goal code.py", "r", encoding="utf-8") as f:
             code = f.read()
         chech=False
