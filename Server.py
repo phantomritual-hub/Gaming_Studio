@@ -47,7 +47,7 @@ def submit():
     }
 
     r = requests.post(
-        f"{SUPABASE_URL}/rest/v1/leaderboard",
+        f"{SUPABASE_URL}/rest/v1/Leader Boards",
         headers=HEADERS,
         json=payload
     )
@@ -66,7 +66,7 @@ def get_leaderboard():
     if not (1 <= rows <= 10) or not (1 <= cols <= 10):
         return jsonify({"status": "error", "message": "Invalid grid size"}), 400
 
-    url = f"{SUPABASE_URL}/rest/v1/leaderboard"
+    url = f"{SUPABASE_URL}/rest/v1/Leader Boards"
     params = {
         "select": "*",
         "rows": f"eq.{rows}",
