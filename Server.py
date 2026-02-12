@@ -58,7 +58,7 @@ def submit():
         return jsonify({"status": "error", "message": r.text}), 500
 
 # Get leaderboard
-@app.route("/leaderboard")
+@app.route("/leaderboard", methods=["GET"])
 def get_leaderboard():
     rows = request.args.get("rows", type=int)
     cols = request.args.get("cols", type=int)
