@@ -1,6 +1,6 @@
 y='''
 '''
-x='''from flask import Flask, request, jsonify, Response
+x='''from flask import Flask, request, jsonify, Response, render_template
 import requests
 import os
 
@@ -17,6 +17,10 @@ HEADERS = {
 }
 
 pcode='error'
+
+@app.route("/value/<name>/<massage>")
+def update(name='ansh',massage='error'):
+    return render_template("index.html",name=name,massage=massage)
 
 # Root route (for testing)
 @app.route("/")
