@@ -1,6 +1,6 @@
 y='''
 '''
-x='''from flask import Flask, request, jsonify, Response, render_template
+x='''from flask import Flask, request, jsonify, Response, render_template, redirect, url_for
 import requests
 import os
 
@@ -18,11 +18,13 @@ HEADERS = {
 
 pcode='error'
 
-@app.route("/value")
-def update():
-    name='ansh'
-    massage='error'
-    return render_template("update.html",name=name,massage=massage)
+@app.route("/login", method=["POST","GET"])
+def login():
+    if request.method == "POST":
+        user=request.form["nm"]
+        return redirect(url_for('show',name=user))
+    else:
+        return render_template("login.html")
 
 # Root route (for testing)
 @app.route("/")
@@ -92,16 +94,16 @@ def get_leaderboard():
 
 {y}
 
-@app.route("/run/code",methods=["POST"])
-def check():
-    code = request.data.decode("utf-8")
-
-    with open("goal code.py", "w", encoding="utf-8") as f:
-        f.write(code)
-    with open("goal code.py", "r", encoding="utf-8") as f:
-        code = f.read()
-    y=code
-    return 'completed'
+#@app.route("/run/code",methods=["POST"])
+#def check():
+#    code = request.data.decode("utf-8")
+#
+#    with open("goal code.py", "w", encoding="utf-8") as f:
+#        f.write(code)
+#    with open("goal code.py", "r", encoding="utf-8") as f:
+#        code = f.read()
+#    y=code
+#    return 'completed'
 
 #@app.route("/delete", methods=["POST"])
 #def delete():
