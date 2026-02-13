@@ -18,7 +18,7 @@ HEADERS = {
 
 pcode='error'
 
-@app.route("/login", method=["POST","GET"])
+@app.route("/login", methods=["POST","GET"])
 def login():
     if request.method == "POST":
         user=request.form["nm"]
