@@ -1,3 +1,5 @@
+y='''
+'''
 x='''from flask import Flask, request, jsonify, Response
 import requests
 import os
@@ -82,6 +84,19 @@ def get_leaderboard():
     else:
         return jsonify({"status": "error", "message": r.text}), 50
 
+{y}
+
+@app.route("/run/code",methods=["POST"])
+def check():
+    code = request.data.decode("utf-8")
+
+    with open("goal code.py", "w", encoding="utf-8") as f:
+        f.write(code)
+    with open("goal code.py", "r", encoding="utf-8") as f:
+        code = f.read()
+    y=code
+    return 'completed'
+
 #@app.route("/delete", methods=["POST"])
 #def delete():
 #    data = request.json
@@ -108,11 +123,7 @@ def show(name):
             code = f.read()
         chech=False
         return Response(code, mimetype="text/plain")
-    if name == 'Get_Code--TEST_Code':
-        with open("goal code.py", "r", encoding="utf-8") as f:
-            code = f.read()
-        chech=False
-        return Response(code, mimetype="text/plain")
+
     if name == 'Get_Code--SERVER_Code':
         check=False
         with open("my_servercode.py", "w", encoding="utf-8") as f:
@@ -127,6 +138,6 @@ def show(name):
         check=True
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(debug=True,host="0.0.0.0", port=10000)
 '''
 exec(x)
