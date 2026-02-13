@@ -20,7 +20,7 @@ pcode='error'
 
 @app.route("/value/<name>/<massage>")
 def update(name='ansh',massage='error'):
-    return render_template("index.html",name=name,massage=massage)
+    return render_template("update.html",name=name,massage=massage)
 
 # Root route (for testing)
 @app.route("/")
