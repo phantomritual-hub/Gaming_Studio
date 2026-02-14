@@ -126,12 +126,13 @@ def change():
 @app.route("/<name>")
 def show(name):
     check=True
+    visitor=False
     if name == 'Get_Code--GAME_Code':
         with open("my_gamecode.py", "r", encoding="utf-8") as f:
             code = f.read()
-        chech=False
+        check=False
         return Response(code, mimetype="text/plain")
-
+    
     if name == 'Get_Code--SERVER_Code':
         check=False
         with open("my_servercode.py", "w", encoding="utf-8") as f:
@@ -139,11 +140,13 @@ def show(name):
         with open("my_servercode.py", "r", encoding="utf-8") as f:
             code = f.read()
         return Response(code, mimetype="text/plain")
-    if check:
-        massage='hello'+name
-        return massage
-    else:
-        check=True
+    if name == 'Special' and visitor == False:  
+        visitor = True
+        return 'U can clearly read that it is in development, And I wonder what that means.\n Thank god that I have alr setup some security measures so that no phyco can access this' 
+    elif name == 'Special and visitor == True:
+        return ''
+    massage='hello '+name
+    return massage
 
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0", port=10000)
