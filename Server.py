@@ -143,7 +143,7 @@ def show(name):
     if name == 'Special' and visitor == False:  
         visitor = True
         return 'U can clearly read that it is in development, And I wonder what that means.\n Thank god that I have alr setup some security measures so that no phyco can access this' 
-    elif name == 'Special and visitor == True:
+    elif name == 'Special' and visitor == True:
         return ''
     massage='hello '+name
     return massage
