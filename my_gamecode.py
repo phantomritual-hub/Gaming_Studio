@@ -98,3 +98,4 @@ py.quit()
 ##)
 ## to install any module use
 ## pip install -r <module_name1> <module_name2>
+##https://discord.gg/Z3FdE3QWx
