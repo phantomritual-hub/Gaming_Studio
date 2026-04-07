@@ -116,7 +116,7 @@ def show(name):
         visitor = True
         return 'U can clearly read that it is in development, And I wonder what that means.','Thank god that I have alr setup some security measures so that no phyco can access this.','Now enjoy all of my progress is down to 0 again' 
     elif name == 'Special' and visitor == True:
-        return 'I just finished talking to a phyco and now U want to check what's here.'
+        return "I just finished talking to a phyco and now U want to check what's here."
     massage='hello '+name
     return massage
 
