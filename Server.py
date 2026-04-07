@@ -102,7 +102,8 @@ def show(name):
             code = f.read()
         check=False
         return Response(code, mimetype="text/plain")
-    if name == 'pygame test'
+    if name == 'pygame test':
+        return 'pygame module'
     
     if name == 'Get_Code--SERVER_Code':
         check=False
