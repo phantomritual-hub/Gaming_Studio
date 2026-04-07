@@ -6,10 +6,8 @@ import os
 
 app = Flask(__name__)
 
-# Load Supabase keys from environment variables (safer than hardcoding)
-SUPABASE_URL = os.environ.get("SUPABASE_URL")  # Example: https://xyzcompany.supabase.co
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY")  # Your anon key
-
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 HEADERS = {
     "apikey": SUPABASE_KEY,
     "Authorization": f"Bearer {SUPABASE_KEY}",
@@ -104,6 +102,7 @@ def show(name):
             code = f.read()
         check=False
         return Response(code, mimetype="text/plain")
+    if name == 'pygame test'
     
     if name == 'Get_Code--SERVER_Code':
         check=False
