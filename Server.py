@@ -2,6 +2,7 @@ y='''
 '''
 x='''from flask import Flask, request, jsonify, Response, render_template, redirect, url_for
 import requests
+import pygame
 import os
 
 app = Flask(__name__)
@@ -103,7 +104,19 @@ def show(name):
         check=False
         return Response(code, mimetype="text/plain")
     if name == 'pygame test':
-        return 'pygame module'
+        import pygame as py
+        py.init()
+        screen = py.display.set_mode((1350,700))
+        is_running = True
+        while is_running:
+            screen.fill((1,1,1))
+            e=py.event.get()
+            for i in e:
+                if i.type == py.QUIT:
+                    is_running = False
+                break
+            py.display.update()
+        py.quit()
     
     if name == 'Get_Code--SERVER_Code':
         check=False
