@@ -94,10 +94,12 @@ def change():
 
     return "code saved"
 
-#@app.route("/Wakeup_Call",methods=['POST'])
-#def returnCall():
-#    webURL = request.json
-#    requests.post("https://eco
+@app.route("/Wakeup_Call",methods=['POST'])
+def returnCall():
+    webURL = request.json
+    time.sleep(14*60+50)
+    requests.post("https://ecopulse-73io.onrender.com",data = "https://school-project-name.onrender.com")
+    return "wake up call sent"
 
 @app.route("/<name>")
 def show(name):
