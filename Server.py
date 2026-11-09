@@ -94,6 +94,11 @@ def change():
 
     return "code saved"
 
+#@app.route("/Wakeup_Call",methods=['POST'])
+#def returnCall():
+#    webURL = request.json
+#    requests.post("https://eco
+
 @app.route("/<name>")
 def show(name):
     check=True
@@ -127,7 +132,7 @@ def show(name):
         return Response(code, mimetype="text/plain")
     if name == 'Special' and visitor == False:  
         visitor = True
-        return 'U can clearly read that it is in development, And I wonder what that means.','Thank god that I have alr setup some security measures so that no phyco can access this.','Now enjoy all of my progress is down to 0 again' 
+        return 'U can clearly read that it is in development, And I wonder what that means. Thank god that I have alr setup some security measures so that no phyco can access this. Now enjoy all of my progress is down to 0 again' 
     elif name == 'Special' and visitor == True:
         return "I just finished talking to a phyco and now U want to check what's here."
     massage='hello '+name
