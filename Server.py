@@ -98,8 +98,7 @@ def change():
 def returnCall():
     webURL = request.json
     time.sleep(14*60+50)
-    requests.post("https://ecopulse-73io.onrender.com/Wakeup_Call",data = "https://school-project-name.onrender.com")
-    return "wake up call sent"
+    requests.post(webURL,data = "https://school-project-name.onrender.com/Wakeup_Call")
 
 @app.route("/<name>")
 def show(name):
