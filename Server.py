@@ -99,6 +99,7 @@ def returnCall():
     webURL = request.json
     time.sleep(14*60+50)
     requests.post(webURL,data = "https://school-project-name.onrender.com/Wakeup_Call")
+    return
 
 @app.route("/<name>")
 def show(name):
