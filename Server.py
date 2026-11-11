@@ -28,7 +28,7 @@ def login():
 # Root route (for testing)
 @app.route("/")
 def home():
-    return render_template("fullScreen.html")
+    return render_template("index.html")
 
 # Submit score
 @app.route("/submit", methods=["POST"])
