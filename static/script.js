@@ -1,36 +1,145 @@
-const contactBtn = document.getElementById("contactBtn");
 
-const popup = document.getElementById("popup");
+// ==================================
+// CONTACT MODAL
+// ==================================
 
-const closeBtn = document.getElementById("closeBtn");
+const modal = document.getElementById("contactModal");
+
+const contactButtons = [
+    document.getElementById("heroContact"),
+    document.getElementById("navContact"),
+    document.getElementById("footerContact")
+];
+
+const closeButton = document.getElementById("modalClose");
+
+const okayButton = document.getElementById("okayButton");
 
 
-// OPEN POPUP
+function openModal() {
 
-contactBtn.addEventListener("click", function() {
+    modal.classList.add("active");
 
-    popup.classList.add("active");
+    document.body.style.overflow = "hidden";
+
+    okayButton.focus();
+
+}
+
+
+function closeModal() {
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+contactButtons.forEach(button => {
+
+    button.addEventListener("click", openModal);
 
 });
 
 
-// CLOSE POPUP
+closeButton.addEventListener("click", closeModal);
 
-closeBtn.addEventListener("click", function() {
-
-    popup.classList.remove("active");
-
-});
+okayButton.addEventListener("click", closeModal);
 
 
-// CLOSE WHEN CLICKING OUTSIDE POPUP
+modal.addEventListener("click", event => {
 
-popup.addEventListener("click", function(event) {
+    if (event.target === modal) {
 
-    if (event.target === popup) {
-
-        popup.classList.remove("active");
+        closeModal();
 
     }
 
 });
+
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape" && modal.classList.contains("active")) {
+
+        closeModal();
+
+    }
+
+});
+
+
+// ==================================
+// MOBILE NAVIGATION
+// ==================================
+
+const menuToggle = document.getElementById("menuToggle");
+
+const navLinks = document.getElementById("navLinks");
+
+
+menuToggle.addEventListener("click", () => {
+
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+
+// ==================================
+// BACK TO TOP
+// ==================================
+
+const floatingTop = document.getElementById("floatingTop");
+
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 450) {
+
+        floatingTop.classList.add("visible");
+
+    } else {
+
+        floatingTop.classList.remove("visible");
+
+    }
+
+});
+
+
+floatingTop.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+
+// ==================================
+// FOOTER YEAR
+// ==================================
+
+document.getElementById("year").textContent =
+
+    new Date().getFullYear();
