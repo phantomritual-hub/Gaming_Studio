@@ -1,66 +1,230 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>
-      {% block index %}{% endblock %}
-    </title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Main Page</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Killer.io <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">nothing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Codes
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                python codes
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/Get_Code--GAME_Code">Game Code</a>
-                <a class="dropdown-item" href="/Get_Code--SERVER_Code">Server Code</a>
-              </div>
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                html codes
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/Get_Code--web_Code">this wibsite's Code</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/Get_Code--web_Code">Server Code</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/unknown">Special</a>
-              </div>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/unknown">Special</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-    {% block content %}
-    {% endblock %}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>The_Gaming_Studio | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>The_Gaming_Studio</h1>
+        <p>INDEPENDENT ROBLOX DEVELOPER</p>
+    </header>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro">
+
+        <div class="intro-label">ABOUT ME</div>
+
+        <p>
+            Hello! I'm <b>The_Gaming_Studio</b>, a Roblox developer
+            and Luau scripter passionate about creating gameplay
+            systems and turning creative ideas into reality.
+        </p>
+
+        <div class="details">
+
+            <div>
+                <span>ROBLOX ACCOUNT</span>
+                <b>The_Gaming_Studio</b>
+            </div>
+
+            <div>
+                <span>ROLE</span>
+                <b>Roblox Scripter</b>
+            </div>
+
+            <div>
+                <span>SPECIALITY</span>
+                <b>Gameplay & Systems</b>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROGRAMMING LANGUAGES -->
+
+    <section class="skills">
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <div class="skill-group">
+                    <div class="skill">Lua / Luau</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">HTML</div>
+                    <div class="skill">C++</div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill">Lua / Luau</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">HTML</div>
+                    <div class="skill">C++</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT BUTTON -->
+
+    <section class="contact-section">
+
+        <button id="contactBtn">
+            Get in touch <span>↗</span>
+        </button>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects">
+
+        <div class="project-heading">
+
+            <div>
+                <span>MY WORK</span>
+                <h2>Projects & Creations.</h2>
+            </div>
+
+            <p>Some of my creations and experiments.</p>
+
+        </div>
+
+
+        <div class="project-marquee">
+
+            <div class="project-track">
+
+                <div class="project-group">
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            PROJECT IMAGE
+                        </div>
+
+                        <div class="project-info">
+                            <h3>The Grid</h3>
+                            <p>A dynamic Roblox experience.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            PROJECT IMAGE
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Project Two</h3>
+                            <p>Write your project description here.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            PROJECT IMAGE
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Project Three</h3>
+                            <p>Write your project description here.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- DUPLICATE FOR INFINITE LOOP -->
+
+                <div class="project-group">
+
+                    <div class="project-card">
+                        <div class="project-image">PROJECT IMAGE</div>
+                        <div class="project-info">
+                            <h3>The Grid</h3>
+                            <p>A dynamic Roblox experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">PROJECT IMAGE</div>
+                        <div class="project-info">
+                            <h3>Project Two</h3>
+                            <p>Write your project description here.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">PROJECT IMAGE</div>
+                        <div class="project-info">
+                            <h3>Project Three</h3>
+                            <p>Write your project description here.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT POPUP -->
+
+    <div class="popup-bg" id="popup">
+
+        <div class="popup">
+
+            <h2>Get in touch.</h2>
+
+            <p>Let's connect!</p>
+
+            <a href="mailto:YOUR_EMAIL@example.com">
+                Email ↗
+            </a>
+
+            <a href="https://www.youtube.com/@YOUR_CHANNEL"
+               target="_blank">
+                YouTube ↗
+            </a>
+
+            <a href="https://discord.gg/YOUR_INVITE"
+               target="_blank">
+                Discord ↗
+            </a>
+
+            <button id="closeBtn">Okay</button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        © 2026 The_Gaming_Studio
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
